@@ -43,7 +43,7 @@ public class Arvore<t> {
 		while(!fila.isEmpty()){
 			no = fila.remove(0);
 			System.out.println(no.valor);
-			fila.addAll(no.filhos);
+			fila.addAll(no.getFilhos());
 		}
 	}
 	
@@ -81,12 +81,30 @@ public class Arvore<t> {
 	
 	public void remove(T valor){
 		No<t> no = this.localiza(valor);
-		if (No != null ){
-			for(No<t> filho : no.filho){
+		if (no != null ){
+			for(No<t> filho : no.getFilhos()){
 				filho.pai = no.pai;
-				no.getPai().filhos.add(filho);
+				no.getPai().getFilhos().add(filho);
 			}
-			no.pai().filhos.remove(no);
+			no.getPai().getFilhos().remove(no);
+		}
+	}
+	
+	//Adicionando
+	public void add (t valor){
+		//add primeiro valor na arvore
+		if(raiz == null){
+			this.setRaiz((No<t>) valor); 
+		}else{
+			//Add valores a Esquerda
+			if( ((No<t>) valor) < this.getRaiz()){
+				
+			} else {
+				//Add valores a Direita
+				if(valor > this.getRaiz()) {
+					
+				}
+			}
 		}
 	}
 }

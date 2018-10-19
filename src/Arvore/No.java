@@ -13,9 +13,9 @@ public class No <t> {
 	
 	public No(t valor){
 		
+		
 		this.valor = valor;
 		this.filhos = new ArrayList<No<t>>();
-		
 	}
 
 	public No<t> getPai() {
